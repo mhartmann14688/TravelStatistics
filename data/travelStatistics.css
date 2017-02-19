@@ -1,0 +1,8 @@
+.unloaded{
+	-fx-font-style: italic;
+	-fx-text-fill: #606060;
+}
+
+.loaded{
+	-fx-font-style: normal ;
+}

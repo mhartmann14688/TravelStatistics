@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" focusTraversable="false" prefHeight="-1.0" prefWidth="480.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="travelStatistics.TravelStatisticsController">
+  <children>
+    <VBox prefHeight="-1.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="480.0">
+          <children>
+            <Button fx:id="loadFile" layoutX="378.0" layoutY="15.0" mnemonicParsing="false" prefWidth="69.0" text="Load" />
+            <Label alignment="BASELINE_LEFT" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" prefHeight="22.000099999997474" prefWidth="127.0" text="File:">
+              <font>
+                <Font name="System Bold" size="12.0" fx:id="x1" />
+              </font>
+              <labelFor>
+                <Label fx:id="filename" alignment="BASELINE_LEFT" layoutX="57.0" layoutY="17.0" styleClass="unloaded" text="&lt;&lt;no file loaded&gt;&gt;" textFill="BLACK">
+                  <font>
+                    <Font size="12.0" />
+                  </font>
+                  <stylesheets>
+                    <URL value="@../../data/travelStatistics.css" />
+                  </stylesheets>
+                </Label>
+              </labelFor>
+            </Label>
+            <fx:reference source="filename" />
+          </children>
+        </Pane>
+        <TitledPane animated="false" expanded="false" prefHeight="-1.0" prefWidth="334.0" text="Options">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="215.0" prefWidth="476.0">
+              <children>
+                <GridPane prefHeight="192.0" prefWidth="378.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <ColorPicker fx:id="idleColor" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <TextField id="maxSpeedIdle" fx:id="maxSpeedIdleTextField" prefWidth="200.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <TextField id="maxSpeedWalking" fx:id="maxSpeedWalkingTextField" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                    <ColorPicker fx:id="walkingColor" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <ColorPicker fx:id="drivingColor" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <Label text="Idle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Walking" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Driving" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label font="$x1" prefWidth="154.0" text="Outputfolder" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                    <Label font="$x1" text="Graphicsformat" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+                    <Label font="$x1" text="Measurements" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
+                    <Label text="km/h" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                    <Label text="km/h" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                    <Label text="if speed &lt;" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                    <Label text="if speed &lt;" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="69.0" minWidth="10.0" prefWidth="36.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="64.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="110.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="10.0" prefWidth="71.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="10.0" prefWidth="71.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="10.0" prefWidth="71.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TabPane prefHeight="-1.0" prefWidth="416.0" rotate="0.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Daily Statistics">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="200.0">
+                  <children>
+                    <Button fx:id="generateDailyStatistics" layoutX="360.0" layoutY="23.0" text="Generate" />
+                     </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab disable="false" text="Overall Statistics">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab disable="true" text="Hikes">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab disable="true" text="Foto Statistics">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab disable="true" text="Foto timing">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
