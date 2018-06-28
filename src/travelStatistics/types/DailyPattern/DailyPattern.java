@@ -184,7 +184,7 @@ public class DailyPattern {
 	}
 
 	public void create() {
-    	//dailyPattern.showOutput();
+    	// dailyPattern.showOutput();
     	dailyPattern.createTimeline(data.getMinDateInFile(), data.getMaxDateInFile());
 		
 	}

@@ -88,6 +88,7 @@ public class GPSData {
 
                     // Read from JSON
                     File f = new File("input\\"+jsonFile);
+                    System.out.println("Trying to read " + f.getAbsolutePath());
 
                     if(f.exists() && !f.isDirectory()) {
                         System.out.println("Trying to parse "+ f.getAbsolutePath());
